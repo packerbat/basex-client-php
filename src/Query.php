@@ -44,8 +44,9 @@ class Query
                 throw new Exception($this->session->readString());
             }
         }
-        if($this->pos < count($this->cache)) return true;
-        $this->cache = null;
+        if ($this->cache == NULL) return false;
+        if ($this->pos < count($this->cache)) return true;
+        $this->cache = NULL;
 
         return false;
     }
